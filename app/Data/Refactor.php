@@ -38,5 +38,14 @@ class Refactor
         ];
     }
 
+    public function responsibles($data)
+    {
+        return (object) [
+            "name" => $data["name"] ?? null,
+            "account" => $data["account"] ?? null,
+            "phone" => $data["phone"] ?? null,
+        ];
+    }
+
 
 }

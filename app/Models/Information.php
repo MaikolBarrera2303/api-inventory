@@ -37,4 +37,13 @@ class Information
         ];
     }
 
+    public function responsible($data)
+    {
+        return [
+            "name" => $data->name,
+            "account" => $data->account,
+            "phone" => $data->phone,
+        ];
+    }
+
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\ResponsibleController;
 use App\Http\Controllers\TypeDeviceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,7 +25,9 @@ Route::middleware("bearerToken")->group(function (){
 
     Route::apiResource("devices",DeviceController::class);
 
-    Route::apiResource("type-devices",TypeDeviceController::class);
+    Route::apiResource("type-devices",TypeDeviceController::class)->only("index","store","destroy");
+
+    Route::apiResource("responsibles",ResponsibleController::class)->except("create","show","edit");
 
 
 });
